@@ -639,7 +639,7 @@ const loader =
 
 loader.load(
 
-  '/apple.glb',
+  `${import.meta.env.BASE_URL}apple.glb`,
 
 
 
