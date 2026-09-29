@@ -107,7 +107,7 @@ Object.assign(
 
     lineHeight: '1.12',
 
-    color: '#c83a2d',
+    color: '#ffffff',
 
     pointerEvents: 'none',
 
