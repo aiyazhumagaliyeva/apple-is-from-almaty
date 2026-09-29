@@ -49,8 +49,6 @@ const appleLanguages = [
 
   'تُعتبر آسيا الوسطى عمومًا مركز نشأة التفاح بسبب التنوع الجيني في العينات الموجودة هناك.',
 
-  'מרכז אסיה נחשב בדרך כלל למרכז המוצא של תפוחים, בשל השונות הגנטית בדגימות המצויות שם.',
-
   'मध्य एशिया को आम तौर पर सेब की उत्पत्ति का केंद्र माना जाता है, क्योंकि वहाँ पाए जाने वाले नमूनों में आनुवंशिक विविधता है।',
 
   '中亚通常被认为是苹果的起源中心，因为那里的苹果样本具有很高的遗传多样性。',
@@ -63,8 +61,97 @@ const appleLanguages = [
 
   'Trung Á thường được xem là trung tâm nguồn gốc của táo nhờ sự đa dạng di truyền trong các mẫu táo tại đây.',
 
-  'Центральная Азия считается одним из основных центров происхождения яблони благодаря генетическому разнообразию местных образцов.'
+  'Центральная Азия считается одним из основных центров происхождения яблони благодаря генетическому разнообразию местных образцов.',
 
+  'Centraal-Azië wordt algemeen beschouwd als het oorsprongsgebied van de appel vanwege de genetische variabiliteit van de specimens die er worden aangetroffen.'
+  'Centralasien betraktas allmänt som äpplets ursprungscentrum på grund av den genetiska variationen hos exemplaren där.',
+  'Centralasien betragtes generelt som æblets oprindelsescentrum på grund af den genetiske variabilitet i prøverne der.',
+  'Sentral-Asia regnes generelt som eplets opprinnelsessenter på grunn av den genetiske variabiliteten i eksemplarene der.'
+ ' Keski-Aasiaa pidetään yleisesti omenan alkuperäkeskuksena siellä esiintyvien näytteiden geneettisen vaihtelun vuoksi.',
+
+'Közép-Ázsiát általában az alma származási központjának tekintik az ott található példányok genetikai változatossága miatt.',
+
+'Střední Asie je obecně považována za centrum původu jablek díky genetické variabilitě tamních exemplářů.',
+
+'Stredná Ázia sa všeobecne považuje za centrum pôvodu jabĺk vďaka genetickej variabilite tamojších exemplárov.',
+
+'Asia Centrală este considerată în general centrul de origine al merelor datorită variabilității genetice a specimenelor de acolo.',
+'Централна Азия обикновено се смята за център на произход на ябълките поради генетичното разнообразие на екземплярите там.',
+'Центральна Азія зазвичай вважається центром походження яблук завдяки генетичній різноманітності екземплярів, знайдених там.',
+
+'Централна Азија се опште сматра центром порекла јабука због генетичке варијабилности тамошњих примерака.',
+
+'Središnja Azija općenito se smatra središtem podrijetla jabuka zbog genetske varijabilnosti tamošnjih primjeraka.',
+
+'Srednja Azija splošno velja za središče izvora jabolk zaradi genetske raznolikosti tamkajšnjih osebkov.',
+
+'Централна Азија општо се смета за центар на потекло на јаболката поради генетската варијабилност на тамошните примероци.',
+
+'Vidurinė Azija paprastai laikoma obuolių kilmės centru dėl ten esančių pavyzdžių genetinės įvairovės.',
+
+'Vidusāzija parasti tiek uzskatīta par ābolu izcelsmes centru, ņemot vērā tur esošo paraugu ģenētisko variabilitāti.',
+
+'Kesk-Aasiat peetakse üldiselt õunte pärritolukeskuseks sealsete isendite geneetilise varieeruvuse tõttu.',
+
+'ცენტრალური აზია ზოგადად ითვლება ვაშლის წარმოშობის ცენტრად იქ არსებული ნიმუშების გენეტიკური ცვალებადობის გამო.',
+
+'Կենտրոնական Ասիան ընդհանուր առմամբ համարվում է խնձորի ծագման կենտրոնը՝ այնտեղի նմուշների գենետիկական փոփոխականության պատճառով։',
+
+' آسیای مرکزی به دلیل تنوع ژنتیکی نمونه‌های موجود در آنجا، عموماً به عنوان مرکز منشأ سیب در نظر گرفته می‌شود.',
+'وسطی ایشیا کو عام طور پر وہاں کے نمونوں میں جینیاتی تغیرات کی وجہ سے سیب کی اصل کا مرکز مانا جاتا ہے۔',
+'মধ্য এশিয়াকে সাধারণত সেখানে থাকা নমুনার জেনেটিক বৈচিত্র্যের কারণে আপেলের উৎপত্তি কেন্দ্র হিসেবে বিবেচনা করা হয়।',
+
+'मध्य एशिया को वहाँ मौजूद नमूनों की आनुवंशिक भिन्नता के कारण सामान्यतः सेब का उत्पत्ति स्थल माना जाता है।',
+
+'મધ્ય એશિયાને સામાન્ય રીતે ત્યાંના નમૂનાઓમાં જેનિટિક વિવિધતાના કારણે સફરજનનું ઉત્પત્તિ સ્થાન માનવામાં આવે છે.',
+
+'तेथील नमुन्यांमधील अनुवंशिक विविधतेमुळे मध्य आशियाला सामान्यतः सफरचंदाचे उगमस्थान मानले जाते.',
+
+'அங்குள்ள மாதிரிகளின் மரபணு வேறுபாடு காரணமாக மத்திய ஆசியா பொதுவாக ஆப்பிள்களின் தோற்ற மையமாகக் கருதப்படுகிறது.',
+
+'అక్కడ ఉన్న నమూనాలలో జన్యు వైవిధ్యం కారణంగా మధ్య ఆసియాను సాధారణంగా ఆపిల్స్ యొక్క పుట్టుక కేంద్రంగా పరిగణిస్తారు.',
+
+'ಅಲ್ಲಿನ ಮಾದರಿಗಳಲ್ಲಿನ ತಳೀಯ ವ್ಯತ್ಯಾಸದ ಕಾರಣದಿಂದಾಗಿ ಮಧ್ಯ ಏಷ್ಯಾವನ್ನು સામાન્યವಾಗಿ ಸೇಬುಗಳ ಮೂಲ ಕೇಂದ್ರವೆಂದು పరిಗಣಿಸಲಾಗುತ್ತದೆ.',
+
+'അവിടെയുള്ള സാമ്പിളുകളിലെ ജനിതക വ്യതിയാനം കാരണം മധ്യേഷ്യയെ പൊതുവെ ആപ്പിളിന്റെ ഉത്ഭവ കേന്ദ്രമായി കണക്കാക്കുന്നു.',
+
+'එහි ඇති සාම්පලවල ජානමය වෙනස්කම් හේතුවෙන් මධ්‍යම ආසියාව සාමාන්‍යයෙන් ඇපල්වල උපන් මධ්‍යස්ථානය ලෙස සැලකේ.',
+
+'ထိုနေရာရှိ နမူနာများ၏ မျိုးရိုးဗီဇ ကွဲပြားမှုကြောင့် ဗဟိုအာရှကို ပန်းသီး၏ မူလအစဗဟိုဌာနအဖြစ် ယေဘုယျအားဖြင့် ယူဆကြသည်။',
+
+'អាស៊ីកណ្តាលត្រូវបានគេចាត់ទុកជាទូទៅថាជាមជ្ឈមណ្ឌលប្រភពដើមនៃផ្លែប៉ោម ដោយសារតែភាពប្រែប្រួលនៃហ្សែននៅក្នុងគំរូនៅទីនោះ។',
+
+'ອາຊີກາງໂດຍທົ່ວໄປແລ້ວຖືວ່າເປັນศูนย์ກາງຕົ້ນກຳເນີດຂອງໝາກແອບເປິ້ນ ເນື່ອງຈາກຄວາມຫຼາກຫຼາຍທາງພັນທຸກໍາຂອງຕົວຢ່າງຢູ່ທີ່ນັ້ນ.',
+
+'Asia Tengah umumnya dianggap sebagai pusat asal usul apel karena variabilitas genetik pada spesimen di sana.',
+
+'Asia Tengah secara umumnya dianggap sebagai pusat asal usul epal disebabkan variabiliti genetik spesimen di sana.',
+
+'Ang Gitnang Asya ay pangkalahatang itinuturing na sentro ng pinagmulan ng mga mansanas dahil sa pagkakaiba-iba ng genetika sa mga sample doon.',
+
+'Asia Tengah umume dianggep minangka pusat asal-usul apel amarga variabilitas genetik ing spesimen ing kono.',
+
+'Asia Tengah umumna dianggap salaku pusat asal-usul apel alatan variabilitas genetik dina spésimén di dinya.',
+
+'Asia Central kwa ujumla inachukuliwa kuwa kituo cha asili cha maapulo due kwa tofauti za kigenetiki za sampuli za huko.',
+
+'Sentraal-Asië word oor die algemeen beskou as die oorsprongsentrum vir appels vanweë die genetiese variabiliteit in monsters daar.',
+
+'Centra Azio estas ĝenerale konsiderata la centro de origino por pomoj pro la genetika variebleco en la specimenoj tie.',
+
+'Ystyrir Central Asia yn gyffredinol fel canolfan tarddiad afalau oherwydd y amryvariabledd genetig yn y sbesimenau yno.',
+
+'Meastar go ginearálta gurb í an Áise Lárnach lárionad tionscnaimh na n-úll mar gheall ar an inathraitheacht ghéiniteach sna heiseamláirí ansin.',
+
+'Thathar a’ meas san fharsaingeachd gur e Meadhan Àisia ionad tùs nan ubhal air sgàth caochlaideachd ghnèitheach nan eisimpleirean an sin.',
+
+'Erdialdeko Asia sagarren jatorri-zentrotzat hartzen da oro har, bertako aleen aldakortasun genetikoa dela eta'.
+
+'L'Àsia Central es considera generalment el centre d'origen de les pomes a causa de la variabilitat genètica dels exemplars que s'hi troben.',
+
+'A Asia Central considérase xeralmente o centro de orixe das mazás debido á variabilidade xenética dos exemplares alí atopados.',
+
+'Mið-Asía er almennt talin vera upprunamiðstöð eflanna vegna erfðafræðilegs breytileika í sýnum þar.'
 ]
 
 
