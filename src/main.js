@@ -89,7 +89,7 @@ Object.assign(
 
     left: '50%',
 
-    top: '25%',
+    top: '20%',
 
     transform: 'translateX(-50%)',
 
