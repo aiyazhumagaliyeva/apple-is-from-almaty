@@ -89,7 +89,7 @@ Object.assign(
 
     left: '50%',
 
-    top: '28%',
+    top: '25%',
 
     transform: 'translateX(-50%)',
 
@@ -101,7 +101,7 @@ Object.assign(
 
     fontFamily: 'Arial, sans-serif',
 
-    fontSize: 'clamp(24px, 2.5vw, 72px)',
+    fontSize: 'clamp(24px, 2.9vw, 72px)',
 
     fontWeight: '300',
 
