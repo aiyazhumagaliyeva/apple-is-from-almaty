@@ -24,7 +24,7 @@ scene.background = new THREE.Color(0x000000)
 // ------------------------------------
 
 const appleLanguages = [
-
+  
   'Central Asia is generally considered the center of origin for apples due to the genetic variability in specimens there.',
 
   'Орталық Азия мұндағы үлгілердің генетикалық әртүрлілігіне байланысты алманың шығу орталығы болып саналады.',
@@ -63,11 +63,11 @@ const appleLanguages = [
 
   'Центральная Азия считается одним из основных центров происхождения яблони благодаря генетическому разнообразию местных образцов.',
 
-  'Centraal-Azië wordt algemeen beschouwd als het oorsprongsgebied van de appel vanwege de genetische variabiliteit van de specimens die er worden aangetroffen.'
+  'Centraal-Azië wordt algemeen beschouwd als het oorsprongsgebied van de appel vanwege de genetische variabiliteit van de specimens die er worden aangetroffen.',
   'Centralasien betraktas allmänt som äpplets ursprungscentrum på grund av den genetiska variationen hos exemplaren där.',
   'Centralasien betragtes generelt som æblets oprindelsescentrum på grund af den genetiske variabilitet i prøverne der.',
-  'Sentral-Asia regnes generelt som eplets opprinnelsessenter på grunn av den genetiske variabiliteten i eksemplarene der.'
- ' Keski-Aasiaa pidetään yleisesti omenan alkuperäkeskuksena siellä esiintyvien näytteiden geneettisen vaihtelun vuoksi.',
+  'Sentral-Asia regnes generelt som eplets opprinnelsessenter på grunn av den genetiske variabiliteten i eksemplarene der.',
+ 'Keski-Aasiaa pidetään yleisesti omenan alkuperäkeskuksena siellä esiintyvien näytteiden geneettisen vaihtelun vuoksi.',
 
 'Közép-Ázsiát általában az alma származási központjának tekintik az ott található példányok genetikai változatossága miatt.',
 
@@ -145,13 +145,13 @@ const appleLanguages = [
 
 'Thathar a’ meas san fharsaingeachd gur e Meadhan Àisia ionad tùs nan ubhal air sgàth caochlaideachd ghnèitheach nan eisimpleirean an sin.',
 
-'Erdialdeko Asia sagarren jatorri-zentrotzat hartzen da oro har, bertako aleen aldakortasun genetikoa dela eta'.
+'Erdialdeko Asia sagarren jatorri-zentrotzat hartzen da oro har, bertako aleen aldakortasun genetikoa dela eta.',
 
-'L'Àsia Central es considera generalment el centre d'origen de les pomes a causa de la variabilitat genètica dels exemplars que s'hi troben.',
+'LÀsia Central es considera generalment el centre dorigen de les pomes a causa de la variabilitat genètica dels exemplars que shi troben.',
 
 'A Asia Central considérase xeralmente o centro de orixe das mazás debido á variabilidade xenética dos exemplares alí atopados.',
 
-'Mið-Asía er almennt talin vera upprunamiðstöð eflanna vegna erfðafræðilegs breytileika í sýnum þar.'
+'Mið-Asía er almennt talin vera upprunamiðstöð eflanna vegna erfðafræðilegs breytileika í sýnum þar.' 
 ]
 
 
@@ -188,7 +188,7 @@ Object.assign(
 
     fontFamily: 'Arial, sans-serif',
 
-    fontSize: 'clamp(24px, 2.5vw, 72px)',
+    fontSize: 'clamp(24px, 2.3vw, 72px)',
 
     fontWeight: '300',
 
