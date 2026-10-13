@@ -6,6 +6,43 @@ import RAPIER from '@dimforge/rapier3d-compat'
 
 import './style.css'
 
+// ------------------------------------
+// FONT — Noto Sans (covers every script in the text)
+// ------------------------------------
+
+const FONT_STACK =
+  '"Noto Sans", "Noto Sans Arabic", "Noto Sans Armenian", "Noto Sans Bengali", "Noto Sans Devanagari", "Noto Sans Georgian", "Noto Sans Gujarati", "Noto Sans Kannada", "Noto Sans Khmer", "Noto Sans Lao", "Noto Sans Malayalam", "Noto Sans Myanmar", "Noto Sans Sinhala", "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Thai", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", sans-serif'
+
+const fontFamilies = [
+  'Noto+Sans:wght@300;400;600',
+  'Noto+Sans+Arabic:wght@300;400',
+  'Noto+Sans+Armenian:wght@300;400',
+  'Noto+Sans+Bengali:wght@300;400',
+  'Noto+Sans+Devanagari:wght@300;400',
+  'Noto+Sans+Georgian:wght@300;400',
+  'Noto+Sans+Gujarati:wght@300;400',
+  'Noto+Sans+Kannada:wght@300;400',
+  'Noto+Sans+Khmer:wght@300;400',
+  'Noto+Sans+Lao:wght@300;400',
+  'Noto+Sans+Malayalam:wght@300;400',
+  'Noto+Sans+Myanmar:wght@300;400',
+  'Noto+Sans+Sinhala:wght@300;400',
+  'Noto+Sans+Tamil:wght@300;400',
+  'Noto+Sans+Telugu:wght@300;400',
+  'Noto+Sans+Thai:wght@300;400',
+  'Noto+Sans+JP:wght@300;400',
+  'Noto+Sans+KR:wght@300;400',
+  'Noto+Sans+SC:wght@300;400'
+]
+
+const fontLink = document.createElement('link')
+fontLink.rel = 'stylesheet'
+fontLink.href =
+  'https://fonts.googleapis.com/css2?family=' +
+  fontFamilies.join('&family=') +
+  '&display=swap'
+document.head.appendChild(fontLink)
+
 
 
 // ------------------------------------
@@ -111,7 +148,7 @@ const appleLanguages = [
 
 'అక్కడ ఉన్న నమూనాలలో జన్యు వైవిధ్యం కారణంగా మధ్య ఆసియాను సాధారణంగా ఆపిల్స్ యొక్క పుట్టుక కేంద్రంగా పరిగణిస్తారు.',
 
-'ಅಲ್ಲಿನ ಮಾದರಿಗಳಲ್ಲಿನ ತಳೀಯ ವ್ಯತ್ಯಾಸದ ಕಾರಣದಿಂದಾಗಿ ಮಧ್ಯ ಏಷ್ಯಾವನ್ನು સામાન્યವಾಗಿ ಸೇಬುಗಳ ಮೂಲ ಕೇಂದ್ರವೆಂದು పరిಗಣಿಸಲಾಗುತ್ತದೆ.',
+'ಅಲ್ಲಿನ ಮಾದರಿಗಳಲ್ಲಿನ ತಳೀಯ ವ್ಯತ್ಯಾಸದ ಕಾರಣದಿಂದಾಗಿ ಮಧ್ಯ ಏಷ್ಯಾವನ್ನು ಸಾಮಾನ್ಯವಾಗಿ ಸೇಬುಗಳ ಮೂಲ ಕೇಂದ್ರವೆಂದು ಪರಿಗಣಿಸಲಾಗುತ್ತದೆ.',
 
 'അവിടെയുള്ള സാമ്പിളുകളിലെ ജനിതക വ്യതിയാനം കാരണം മധ്യേഷ്യയെ പൊതുവെ ആപ്പിളിന്റെ ഉത്ഭവ കേന്ദ്രമായി കണക്കാക്കുന്നു.',
 
@@ -121,7 +158,7 @@ const appleLanguages = [
 
 'អាស៊ីកណ្តាលត្រូវបានគេចាត់ទុកជាទូទៅថាជាមជ្ឈមណ្ឌលប្រភពដើមនៃផ្លែប៉ោម ដោយសារតែភាពប្រែប្រួលនៃហ្សែននៅក្នុងគំរូនៅទីនោះ។',
 
-'ອາຊີກາງໂດຍທົ່ວໄປແລ້ວຖືວ່າເປັນศูนย์ກາງຕົ້ນກຳເນີດຂອງໝາກແອບເປິ້ນ ເນື່ອງຈາກຄວາມຫຼາກຫຼາຍທາງພັນທຸກໍາຂອງຕົວຢ່າງຢູ່ທີ່ນັ້ນ.',
+'ອາຊີກາງໂດຍທົ່ວໄປແລ້ວຖືວ່າເປັນສູນກາງຕົ້ນກຳເນີດຂອງໝາກແອບເປິ້ນ ເນື່ອງຈາກຄວາມຫຼາກຫຼາຍທາງພັນທຸກໍາຂອງຕົວຢ່າງຢູ່ທີ່ນັ້ນ.',
 
 'Asia Tengah umumnya dianggap sebagai pusat asal usul apel karena variabilitas genetik pada spesimen di sana.',
 
@@ -133,13 +170,13 @@ const appleLanguages = [
 
 'Asia Tengah umumna dianggap salaku pusat asal-usul apel alatan variabilitas genetik dina spésimén di dinya.',
 
-'Asia Central kwa ujumla inachukuliwa kuwa kituo cha asili cha maapulo due kwa tofauti za kigenetiki za sampuli za huko.',
+'Asia Central kwa ujumla inachukuliwa kuwa kituo cha asili cha maapulo kutokana na tofauti za kigenetiki za sampuli za huko.',
 
 'Sentraal-Asië word oor die algemeen beskou as die oorsprongsentrum vir appels vanweë die genetiese variabiliteit in monsters daar.',
 
 'Centra Azio estas ĝenerale konsiderata la centro de origino por pomoj pro la genetika variebleco en la specimenoj tie.',
 
-'Ystyrir Central Asia yn gyffredinol fel canolfan tarddiad afalau oherwydd y amryvariabledd genetig yn y sbesimenau yno.',
+'Ystyrir Canolbarth Asia yn gyffredinol fel canolfan tarddiad afalau oherwydd yr amrywioldeb genetig yn y sbesimenau yno.',
 
 'Meastar go ginearálta gurb í an Áise Lárnach lárionad tionscnaimh na n-úll mar gheall ar an inathraitheacht ghéiniteach sna heiseamláirí ansin.',
 
@@ -186,7 +223,7 @@ Object.assign(
 
     textAlign: 'center',
 
-    fontFamily: 'Arial, sans-serif',
+    fontFamily: FONT_STACK,
 
     fontSize: 'clamp(24px, 2.3vw, 72px)',
 
@@ -658,7 +695,7 @@ angleText.setAttribute(
 
   'font-family',
 
-  'Arial, sans-serif'
+  FONT_STACK
 
 )
 
@@ -2023,6 +2060,12 @@ renderer.domElement.addEventListener(
 
 
 
+    hideGhostHand()
+
+    unlockAudio()
+
+
+
     dragging = true
 
 
@@ -2295,6 +2338,10 @@ renderer.domElement.addEventListener(
 
 
 
+    hasShot = true
+
+
+
     if (
 
       renderer.domElement
@@ -2419,6 +2466,8 @@ function processCollisionEvents() {
 
       changeLanguage()
 
+      onWallHit()
+
     }
 
   )
@@ -2492,6 +2541,332 @@ function syncApple() {
 
 
 // ------------------------------------
+// HIT COUNTER
+// ------------------------------------
+
+let hitCount = 0
+
+const hitCounter = document.createElement('div')
+
+Object.assign(
+  hitCounter.style,
+  {
+    position: 'fixed',
+    left: '32px',
+    bottom: '28px',
+    fontFamily: FONT_STACK,
+    color: '#ffffff',
+    pointerEvents: 'none',
+    zIndex: '20',
+    userSelect: 'none',
+    transformOrigin: 'left bottom',
+    transition: 'transform 0.25s cubic-bezier(.2,1.6,.4,1)'
+  }
+)
+
+hitCounter.innerHTML =
+  '<div style="font-size:12px;letter-spacing:0.2em;opacity:0.5;font-weight:400">HITS</div>' +
+  '<div id="hit-number" style="font-size:56px;font-weight:600;line-height:1">0</div>'
+
+document.body.appendChild(hitCounter)
+
+const hitNumber = hitCounter.querySelector('#hit-number')
+
+function bumpCounter() {
+  hitCount++
+  hitNumber.textContent = hitCount
+
+  // pop up, then settle back
+  hitCounter.style.transition = 'none'
+  hitCounter.style.transform = 'scale(1.35)'
+  requestAnimationFrame(() => {
+    hitCounter.style.transition = 'transform 0.35s cubic-bezier(.2,1.6,.4,1)'
+    hitCounter.style.transform = 'scale(1)'
+  })
+}
+
+
+// ------------------------------------
+// BUZZ ON WALL HIT
+// sound + screen shake + phone vibration
+// ------------------------------------
+
+let audioCtx = null
+
+function unlockAudio() {
+  if (!audioCtx) {
+    const Ctx = window.AudioContext || window.webkitAudioContext
+    if (Ctx) audioCtx = new Ctx()
+  }
+  if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume()
+}
+
+function playBuzz(strength) {
+  if (!audioCtx) return
+
+  const now = audioCtx.currentTime
+  const length = 0.08 + strength * 0.12
+
+  const osc = audioCtx.createOscillator()
+  const gain = audioCtx.createGain()
+
+  osc.type = 'sawtooth'
+  osc.frequency.setValueAtTime(70 + strength * 60, now)
+  osc.frequency.exponentialRampToValueAtTime(40, now + length)
+
+  gain.gain.setValueAtTime(0.0001, now)
+  gain.gain.exponentialRampToValueAtTime(0.08 + strength * 0.22, now + 0.01)
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + length)
+
+  osc.connect(gain)
+  gain.connect(audioCtx.destination)
+  osc.start(now)
+  osc.stop(now + length + 0.02)
+}
+
+let shakeAmount = 0
+
+function shakeScreen(strength) {
+  shakeAmount = Math.max(shakeAmount, 4 + strength * 14)
+}
+
+function updateShake() {
+  if (shakeAmount < 0.3) {
+    shakeAmount = 0
+    renderer.domElement.style.transform = ''
+    return
+  }
+  const x = (Math.random() * 2 - 1) * shakeAmount
+  const y = (Math.random() * 2 - 1) * shakeAmount
+  renderer.domElement.style.transform = `translate(${x}px, ${y}px)`
+  shakeAmount *= 0.82
+}
+
+let lastHitTime = 0
+
+function onWallHit() {
+  const time = performance.now()
+
+  // ignore double hits in corners
+  if (time - lastHitTime < 80) return
+  lastHitTime = time
+
+  const v = appleBody.linvel()
+  const speed = Math.hypot(v.x, v.y)
+
+  // 0 = soft hit, 1 = hardest hit
+  const strength = Math.min(speed / 25, 1)
+
+  bumpCounter()
+  playBuzz(strength)
+  shakeScreen(strength)
+
+  if (navigator.vibrate) navigator.vibrate(20 + Math.round(strength * 40))
+}
+
+
+// ------------------------------------
+// APPLE TRAIL ON VERY FAST HITS
+// ------------------------------------
+
+const TRAIL_SPEED = 16 // how fast before the trail starts
+let trailFrame = 0
+
+const trailLayer = document.createElement('div')
+
+Object.assign(
+  trailLayer.style,
+  {
+    position: 'fixed',
+    inset: '0',
+    pointerEvents: 'none',
+    zIndex: '10',
+    overflow: 'hidden'
+  }
+)
+
+document.body.appendChild(trailLayer)
+
+function spawnTrailApple(x, y, speed) {
+  const el = document.createElement('div')
+  el.textContent = '🍎'
+
+  const size = 50 + Math.min(speed, 32) * 1.8
+  const spin = (Math.random() * 2 - 1) * 180
+
+  Object.assign(
+    el.style,
+    {
+      position: 'absolute',
+      left: x + 'px',
+      top: y + 'px',
+      fontSize: size + 'px',
+      lineHeight: '1',
+      transform: `translate(-50%, -50%) rotate(${spin}deg) scale(1)`,
+      opacity: '0.9',
+      transition: 'transform 0.6s ease-out, opacity 0.6s ease-out'
+    }
+  )
+
+  trailLayer.appendChild(el)
+
+  requestAnimationFrame(() => {
+    el.style.transform = `translate(-50%, -50%) rotate(${spin * 2}deg) scale(0.2)`
+    el.style.opacity = '0'
+  })
+
+  setTimeout(() => el.remove(), 650)
+}
+
+function updateAppleTrail() {
+  updateShake()
+
+  if (!appleBody || dragging) return
+
+  const v = appleBody.linvel()
+  const speed = Math.hypot(v.x, v.y)
+
+  if (speed < TRAIL_SPEED) return
+
+  trailFrame++
+  if (trailFrame % 2 !== 0) return
+
+  // drop the emoji a little behind the apple, so it does not cover it
+  const pos = appleBody.translation()
+  const back = 0.6 / speed
+  const p = worldToScreen(pos.x - v.x * back, pos.y - v.y * back)
+
+  spawnTrailApple(p.x, p.y, speed)
+}
+
+
+// ------------------------------------
+// GHOST HAND HINT
+// shows how to pull and release, until the first shot
+// ------------------------------------
+
+let hasShot = false
+let ghostHidden = false
+const ghostStart = performance.now() + 1500 // wait for apple to land
+
+const ghostLayer = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+Object.assign(
+  ghostLayer.style,
+  {
+    position: 'fixed',
+    inset: '0',
+    width: '100%',
+    height: '100%',
+    pointerEvents: 'none',
+    zIndex: '30'
+  }
+)
+
+const ghostLine = document.createElementNS('http://www.w3.org/2000/svg', 'line')
+ghostLine.setAttribute('stroke', '#ffffff')
+ghostLine.setAttribute('stroke-width', '2')
+ghostLine.setAttribute('stroke-dasharray', '4 6')
+ghostLine.setAttribute('stroke-linecap', 'round')
+ghostLayer.appendChild(ghostLine)
+
+document.body.appendChild(ghostLayer)
+
+const ghostHand = document.createElement('div')
+ghostHand.textContent = '👆'
+
+Object.assign(
+  ghostHand.style,
+  {
+    position: 'fixed',
+    left: '0',
+    top: '0',
+    fontSize: '56px',
+    lineHeight: '1',
+    pointerEvents: 'none',
+    zIndex: '31',
+    opacity: '0',
+    filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.6))'
+  }
+)
+
+document.body.appendChild(ghostHand)
+
+function hideGhostHand() {
+  ghostHidden = true
+  ghostHand.style.display = 'none'
+  ghostLayer.style.display = 'none'
+}
+
+function ease(t) {
+  return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2
+}
+
+function updateGhostHand() {
+  if (ghostHidden || hasShot || !appleBody) return
+
+  const now = performance.now()
+
+  if (now < ghostStart || dragging) {
+    ghostHand.style.opacity = '0'
+    ghostLine.setAttribute('opacity', '0')
+    return
+  }
+
+  // one loop = 3 seconds
+  const t = ((now - ghostStart) % 3000) / 1000
+
+  const pos = appleBody.translation()
+  const c = worldToScreen(pos.x, pos.y)
+
+  // pull down-left, away from the center of the screen
+  const dirX = c.x > window.innerWidth / 2 ? -1 : 1
+  const pullX = dirX * 90
+  const pullY = 110
+
+  let pull = 0
+  let opacity = 0
+  let scale = 1
+
+  if (t < 0.4) {
+    // appear and press
+    opacity = t / 0.4
+    scale = 1 - 0.15 * (t / 0.4)
+  } else if (t < 1.3) {
+    // drag
+    opacity = 1
+    scale = 0.85
+    pull = ease((t - 0.4) / 0.9)
+  } else if (t < 1.6) {
+    // hold
+    opacity = 1
+    scale = 0.85
+    pull = 1
+  } else if (t < 2.0) {
+    // release and fade
+    const k = (t - 1.6) / 0.4
+    opacity = 1 - k
+    scale = 0.85 + 0.15 * k
+    pull = 1 - ease(k) * 0.3
+  }
+
+  const hx = c.x + pullX * pull
+  const hy = c.y + pullY * pull
+
+  // fingertip sits on the point
+  ghostHand.style.opacity = String(opacity * 0.85)
+  ghostHand.style.transform =
+    `translate(${hx}px, ${hy}px) translate(-50%, -8%) scale(${scale})`
+
+  ghostLine.setAttribute('x1', c.x)
+  ghostLine.setAttribute('y1', c.y)
+  ghostLine.setAttribute('x2', hx)
+  ghostLine.setAttribute('y2', hy)
+  ghostLine.setAttribute('opacity', pull > 0.05 ? opacity * 0.5 : 0)
+}
+
+
+// ------------------------------------
 // LOOP
 // ------------------------------------
 
@@ -2526,6 +2901,12 @@ function animate() {
   if (dragging)
 
     updateAimUI()
+
+
+
+  updateGhostHand()
+
+  updateAppleTrail()
 
 
 
