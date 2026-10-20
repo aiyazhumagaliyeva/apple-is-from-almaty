@@ -7,6 +7,13 @@ import RAPIER from '@dimforge/rapier3d-compat'
 import './style.css'
 
 // ------------------------------------
+// COLORS
+// ------------------------------------
+
+const BG_COLOR = '#F5F3D1'   // cream background
+const INK_COLOR = '#992429'  // red text, aim arrow and hint trace
+
+// ------------------------------------
 // FONT — Noto Sans (covers every script in the text)
 // ------------------------------------
 
@@ -14,25 +21,25 @@ const FONT_STACK =
   '"Noto Sans", "Noto Sans Arabic", "Noto Sans Armenian", "Noto Sans Bengali", "Noto Sans Devanagari", "Noto Sans Georgian", "Noto Sans Gujarati", "Noto Sans Kannada", "Noto Sans Khmer", "Noto Sans Lao", "Noto Sans Malayalam", "Noto Sans Myanmar", "Noto Sans Sinhala", "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Thai", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", sans-serif'
 
 const fontFamilies = [
-  'Noto+Sans:wght@300;400;600',
-  'Noto+Sans+Arabic:wght@300;400',
-  'Noto+Sans+Armenian:wght@300;400',
-  'Noto+Sans+Bengali:wght@300;400',
-  'Noto+Sans+Devanagari:wght@300;400',
-  'Noto+Sans+Georgian:wght@300;400',
-  'Noto+Sans+Gujarati:wght@300;400',
-  'Noto+Sans+Kannada:wght@300;400',
-  'Noto+Sans+Khmer:wght@300;400',
-  'Noto+Sans+Lao:wght@300;400',
-  'Noto+Sans+Malayalam:wght@300;400',
-  'Noto+Sans+Myanmar:wght@300;400',
-  'Noto+Sans+Sinhala:wght@300;400',
-  'Noto+Sans+Tamil:wght@300;400',
-  'Noto+Sans+Telugu:wght@300;400',
-  'Noto+Sans+Thai:wght@300;400',
-  'Noto+Sans+JP:wght@300;400',
-  'Noto+Sans+KR:wght@300;400',
-  'Noto+Sans+SC:wght@300;400'
+  'Noto+Sans:wght@400;500;600',
+  'Noto+Sans+Arabic:wght@400;500',
+  'Noto+Sans+Armenian:wght@400;500',
+  'Noto+Sans+Bengali:wght@400;500',
+  'Noto+Sans+Devanagari:wght@400;500',
+  'Noto+Sans+Georgian:wght@400;500',
+  'Noto+Sans+Gujarati:wght@400;500',
+  'Noto+Sans+Kannada:wght@400;500',
+  'Noto+Sans+Khmer:wght@400;500',
+  'Noto+Sans+Lao:wght@400;500',
+  'Noto+Sans+Malayalam:wght@400;500',
+  'Noto+Sans+Myanmar:wght@400;500',
+  'Noto+Sans+Sinhala:wght@400;500',
+  'Noto+Sans+Tamil:wght@400;500',
+  'Noto+Sans+Telugu:wght@400;500',
+  'Noto+Sans+Thai:wght@400;500',
+  'Noto+Sans+JP:wght@400;500',
+  'Noto+Sans+KR:wght@400;500',
+  'Noto+Sans+SC:wght@400;500'
 ]
 
 const fontLink = document.createElement('link')
@@ -51,7 +58,8 @@ document.head.appendChild(fontLink)
 
 const scene = new THREE.Scene()
 
-scene.background = new THREE.Color(0x000000)
+scene.background = new THREE.Color(BG_COLOR)
+document.body.style.background = BG_COLOR
 
 
 
@@ -227,11 +235,11 @@ Object.assign(
 
     fontSize: 'clamp(24px, 2.3vw, 72px)',
 
-    fontWeight: '300',
+    fontWeight: '500',
 
     lineHeight: '1.12',
 
-    color: '#ffffff',
+    color: INK_COLOR,
 
     pointerEvents: 'none',
 
@@ -439,13 +447,13 @@ const arrowLine =
 
 
 
-// WHITE
+// BROWN
 
 arrowLine.setAttribute(
 
   'stroke',
 
-  '#ffffff'
+  INK_COLOR
 
 )
 
@@ -507,13 +515,13 @@ arrowHead.setAttribute(
 
 
 
-// WHITE
+// BROWN
 
 arrowHead.setAttribute(
 
   'stroke',
 
-  '#ffffff'
+  INK_COLOR
 
 )
 
@@ -585,13 +593,13 @@ angleArc.setAttribute(
 
 
 
-// WHITE
+// BROWN
 
 angleArc.setAttribute(
 
   'stroke',
 
-  '#ffffff'
+  INK_COLOR
 
 )
 
@@ -669,13 +677,13 @@ const angleText =
 
 
 
-// WHITE
+// BROWN
 
 angleText.setAttribute(
 
   'fill',
 
-  '#ffffff'
+  INK_COLOR
 
 )
 
@@ -1902,13 +1910,13 @@ function updateAimUI() {
 
 
 
-    // WHITE
+    // BROWN
 
     tick.setAttribute(
 
       'stroke',
 
-      '#ffffff'
+      INK_COLOR
 
     )
 
@@ -2541,52 +2549,6 @@ function syncApple() {
 
 
 // ------------------------------------
-// HIT COUNTER
-// ------------------------------------
-
-let hitCount = 0
-
-const hitCounter = document.createElement('div')
-
-Object.assign(
-  hitCounter.style,
-  {
-    position: 'fixed',
-    left: '32px',
-    bottom: '28px',
-    fontFamily: FONT_STACK,
-    color: '#ffffff',
-    pointerEvents: 'none',
-    zIndex: '20',
-    userSelect: 'none',
-    transformOrigin: 'left bottom',
-    transition: 'transform 0.25s cubic-bezier(.2,1.6,.4,1)'
-  }
-)
-
-hitCounter.innerHTML =
-  '<div style="font-size:12px;letter-spacing:0.2em;opacity:0.5;font-weight:400">HITS</div>' +
-  '<div id="hit-number" style="font-size:56px;font-weight:600;line-height:1">0</div>'
-
-document.body.appendChild(hitCounter)
-
-const hitNumber = hitCounter.querySelector('#hit-number')
-
-function bumpCounter() {
-  hitCount++
-  hitNumber.textContent = hitCount
-
-  // pop up, then settle back
-  hitCounter.style.transition = 'none'
-  hitCounter.style.transform = 'scale(1.35)'
-  requestAnimationFrame(() => {
-    hitCounter.style.transition = 'transform 0.35s cubic-bezier(.2,1.6,.4,1)'
-    hitCounter.style.transform = 'scale(1)'
-  })
-}
-
-
-// ------------------------------------
 // BUZZ ON WALL HIT
 // sound + screen shake + phone vibration
 // ------------------------------------
@@ -2633,12 +2595,14 @@ function shakeScreen(strength) {
 function updateShake() {
   if (shakeAmount < 0.3) {
     shakeAmount = 0
-    renderer.domElement.style.transform = ''
+    camera.position.x = 0
+    camera.position.y = 0
     return
   }
-  const x = (Math.random() * 2 - 1) * shakeAmount
-  const y = (Math.random() * 2 - 1) * shakeAmount
-  renderer.domElement.style.transform = `translate(${x}px, ${y}px)`
+  // shake the camera, so the black scene always fills the screen
+  const unit = 0.007
+  camera.position.x = (Math.random() * 2 - 1) * shakeAmount * unit
+  camera.position.y = (Math.random() * 2 - 1) * shakeAmount * unit
   shakeAmount *= 0.82
 }
 
@@ -2657,7 +2621,6 @@ function onWallHit() {
   // 0 = soft hit, 1 = hardest hit
   const strength = Math.min(speed / 25, 1)
 
-  bumpCounter()
   playBuzz(strength)
   shakeScreen(strength)
 
@@ -2742,38 +2705,83 @@ function updateAppleTrail() {
 
 // ------------------------------------
 // GHOST HAND HINT
-// shows how to pull and release, until the first shot
+// a retro pixel pointing finger drags the apple diagonally up.
+// shows only when the apple is resting and nobody touched it for 3 seconds.
+// stops for good after the first shot.
 // ------------------------------------
 
 let hasShot = false
 let ghostHidden = false
-const ghostStart = performance.now() + 1500 // wait for apple to land
 
-const ghostLayer = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+const IDLE_TIME = 3000 // ms of no touch before the hint shows
+let lastTouch = performance.now()
+let restingSince = null
+let hintStart = null
 
-Object.assign(
-  ghostLayer.style,
-  {
-    position: 'fixed',
-    inset: '0',
-    width: '100%',
-    height: '100%',
-    pointerEvents: 'none',
-    zIndex: '30'
+// pixel art: w = white, . = empty
+// black outline is added around the white automatically
+const HAND_POINT = [
+  '..ww.........',
+  '..ww.........',
+  '..ww.........',
+  '..ww.........',
+  '..ww.ww......',
+  '..ww.ww.ww...',
+  '..ww.ww.ww.ww',
+  '..wwwwwwwwwww',
+  'ww.wwwwwwwwww',
+  'wwwwwwwwwwwww',
+  '.wwwwwwwwwwww',
+  '..wwwwwwwwwww',
+  '..wwwwwwwwwww',
+  '...wwwwwwwww.',
+  '....wwwwwww..',
+  '....wwwwwww..'
+]
+
+const PIXEL = 4 // size of one pixel on screen
+
+// fingertip position inside the drawing (outline adds 1 pixel)
+const TIP_X = (1 + 3) * PIXEL
+const TIP_Y = 1 * PIXEL
+
+function pixelHandSVG(rows) {
+  const h = rows.length + 2
+  const w = rows[0].length + 2
+  const grid = []
+
+  for (let y = 0; y < h; y++) {
+    grid.push([])
+    for (let x = 0; x < w; x++) {
+      grid[y].push((rows[y - 1] || '')[x - 1] || '.')
+    }
   }
-)
 
-const ghostLine = document.createElementNS('http://www.w3.org/2000/svg', 'line')
-ghostLine.setAttribute('stroke', '#ffffff')
-ghostLine.setAttribute('stroke-width', '2')
-ghostLine.setAttribute('stroke-dasharray', '4 6')
-ghostLine.setAttribute('stroke-linecap', 'round')
-ghostLayer.appendChild(ghostLine)
+  const isWhite = (x, y) => grid[y] && grid[y][x] === 'w'
+  let rects = ''
 
-document.body.appendChild(ghostLayer)
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      let ch = grid[y][x]
+      if (
+        ch === '.' &&
+        (isWhite(x - 1, y) || isWhite(x + 1, y) || isWhite(x, y - 1) || isWhite(x, y + 1))
+      ) {
+        ch = 'k'
+      }
+      if (ch === '.') continue
+      const fill = ch === 'w' ? '#ffffff' : '#000000'
+      rects += `<rect x="${x}" y="${y}" width="1" height="1" fill="${fill}"/>`
+    }
+  }
+
+  return (
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${w * PIXEL}" height="${h * PIXEL}" ` +
+    `viewBox="0 0 ${w} ${h}" shape-rendering="crispEdges">${rects}</svg>`
+  )
+}
 
 const ghostHand = document.createElement('div')
-ghostHand.textContent = '👆'
 
 Object.assign(
   ghostHand.style,
@@ -2781,25 +2789,63 @@ Object.assign(
     position: 'fixed',
     left: '0',
     top: '0',
-    fontSize: '56px',
-    lineHeight: '1',
+    lineHeight: '0',
     pointerEvents: 'none',
     zIndex: '31',
     opacity: '0',
-    filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.6))'
+    transformOrigin: `${TIP_X}px ${TIP_Y}px`
   }
 )
 
+ghostHand.innerHTML = pixelHandSVG(HAND_POINT)
+
+// dotted trace the finger leaves behind
+const ghostTrace = document.createElement('div')
+
+Object.assign(
+  ghostTrace.style,
+  {
+    position: 'fixed',
+    inset: '0',
+    pointerEvents: 'none',
+    zIndex: '30'
+  }
+)
+
+document.body.appendChild(ghostTrace)
 document.body.appendChild(ghostHand)
+
+const TRACE_GAP = 14 // px between dots
+
+function drawTrace(x1, y1, x2, y2, opacity) {
+  const length = Math.hypot(x2 - x1, y2 - y1)
+  const count = Math.floor(length / TRACE_GAP)
+  let html = ''
+
+  for (let i = 1; i <= count; i++) {
+    const k = (i * TRACE_GAP) / length
+    const x = Math.round(x1 + (x2 - x1) * k)
+    const y = Math.round(y1 + (y2 - y1) * k)
+    // square pixel dots, to match the retro finger
+    html +=
+      `<div style="position:absolute;left:${x - PIXEL / 2}px;top:${y - PIXEL / 2}px;` +
+      `width:${PIXEL}px;height:${PIXEL}px;background:${INK_COLOR}"></div>`
+  }
+
+  ghostTrace.innerHTML = html
+  ghostTrace.style.opacity = String(opacity)
+}
+
+// any touch resets the idle timer
+window.addEventListener('pointerdown', () => {
+  lastTouch = performance.now()
+  hintStart = null
+})
 
 function hideGhostHand() {
   ghostHidden = true
   ghostHand.style.display = 'none'
-  ghostLayer.style.display = 'none'
-}
-
-function ease(t) {
-  return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2
+  ghostTrace.style.display = 'none'
 }
 
 function updateGhostHand() {
@@ -2807,62 +2853,81 @@ function updateGhostHand() {
 
   const now = performance.now()
 
-  if (now < ghostStart || dragging) {
+  // is the apple resting on the ground?
+  const v = appleBody.linvel()
+  const speed = Math.hypot(v.x, v.y)
+
+  if (speed > 0.15 || dragging) {
+    restingSince = null
+    hintStart = null
+  } else if (restingSince === null) {
+    restingSince = now
+  }
+
+  const readyAt =
+    restingSince === null
+      ? Infinity
+      : Math.max(restingSince, lastTouch) + IDLE_TIME
+
+  if (now < readyAt) {
     ghostHand.style.opacity = '0'
-    ghostLine.setAttribute('opacity', '0')
+    ghostTrace.style.opacity = '0'
     return
   }
 
-  // one loop = 3 seconds
-  const t = ((now - ghostStart) % 3000) / 1000
+  if (hintStart === null) hintStart = now
+
+  // old-school animation: only 10 frames per second
+  const raw = ((now - hintStart) % 3000) / 1000
+  const t = Math.floor(raw * 10) / 10
 
   const pos = appleBody.translation()
   const c = worldToScreen(pos.x, pos.y)
 
-  // pull down-left, away from the center of the screen
+  // move diagonally: up, and toward the middle of the screen
+  // only as far as the screen allows
+  const lift = Math.max(60, Math.min(140, c.y - 40))
   const dirX = c.x > window.innerWidth / 2 ? -1 : 1
-  const pullX = dirX * 90
-  const pullY = 110
 
-  let pull = 0
+  let y = 0
   let opacity = 0
   let scale = 1
 
-  if (t < 0.4) {
-    // appear and press
-    opacity = t / 0.4
-    scale = 1 - 0.15 * (t / 0.4)
-  } else if (t < 1.3) {
-    // drag
+  if (t < 0.3) {
+    // blink in
+    opacity = t < 0.2 ? 0.5 : 1
+  } else if (t < 0.6) {
+    // press down on the apple
     opacity = 1
     scale = 0.85
-    pull = ease((t - 0.4) / 0.9)
   } else if (t < 1.6) {
-    // hold
+    // drag up, in steps
     opacity = 1
     scale = 0.85
-    pull = 1
-  } else if (t < 2.0) {
-    // release and fade
-    const k = (t - 1.6) / 0.4
-    opacity = 1 - k
-    scale = 0.85 + 0.15 * k
-    pull = 1 - ease(k) * 0.3
+    y = -lift * ((t - 0.6) / 1.0)
+  } else if (t < 1.9) {
+    // let go
+    opacity = 1
+    y = -lift
+  } else if (t < 2.1) {
+    // blink out
+    opacity = 0.5
+    y = -lift
   }
 
-  const hx = c.x + pullX * pull
-  const hy = c.y + pullY * pull
+  // same distance sideways as up = 45° diagonal
+  let x = -y * dirX
 
-  // fingertip sits on the point
-  ghostHand.style.opacity = String(opacity * 0.85)
+  // snap movement to the pixel grid
+  y = Math.round(y / PIXEL) * PIXEL
+  x = Math.round(x / PIXEL) * PIXEL
+
+  // dots from where the finger pressed to where it is now
+  drawTrace(c.x, c.y, c.x + x, c.y + y, opacity)
+
+  ghostHand.style.opacity = String(opacity)
   ghostHand.style.transform =
-    `translate(${hx}px, ${hy}px) translate(-50%, -8%) scale(${scale})`
-
-  ghostLine.setAttribute('x1', c.x)
-  ghostLine.setAttribute('y1', c.y)
-  ghostLine.setAttribute('x2', hx)
-  ghostLine.setAttribute('y2', hy)
-  ghostLine.setAttribute('opacity', pull > 0.05 ? opacity * 0.5 : 0)
+    `translate(${Math.round(c.x + x - TIP_X)}px, ${Math.round(c.y + y - TIP_Y)}px) scale(${scale})`
 }
 
 
